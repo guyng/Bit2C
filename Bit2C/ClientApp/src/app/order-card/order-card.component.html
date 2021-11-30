@@ -1,0 +1,27 @@
+<mat-card class="order-card">
+    <mat-card-title>Market(BTC)</mat-card-title>
+    <mat-card-content>
+        <form fxLayout="column">
+
+            <mat-form-field class="my-16">
+                <mat-label>Price</mat-label>
+                <input matInput type="number" [(ngModel)]="price" [ngModelOptions]="{standalone: true}">
+
+            </mat-form-field>
+            <mat-form-field class="my-16">
+                <mat-label>Amount</mat-label>
+                <input matInput type="number" [(ngModel)]="amount" [ngModelOptions]="{standalone: true}">
+
+            </mat-form-field>
+
+            <mat-radio-group [(ngModel)]="orderType" #radioGroup="matRadioGroup" [ngModelOptions]="{standalone: true}">
+                <mat-radio-button [value]="0">Buy</mat-radio-button>
+                <mat-radio-button [value]="1">Sell</mat-radio-button>
+            </mat-radio-group>
+        </form>
+
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button (click)="createOrder()">Create Order</button>
+    </mat-card-actions>
+</mat-card>
